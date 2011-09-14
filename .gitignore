@@ -1,0 +1,5 @@
+.bundle
+coverage
+doc
+pkg
+rdoc
