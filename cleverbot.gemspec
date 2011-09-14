@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "cleverbot.gemspec",
     "lib/cleverbot.rb",
     "spec/cleverbot_spec.rb",
     "spec/spec_helper.rb"
