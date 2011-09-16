@@ -1,4 +1,4 @@
-= cleverbot
+= cleverbot {<img src="https://secure.travis-ci.org/benmanns/cleverbot.png" />}[http://travis-ci.org/benmanns/cleverbot]
 
 Ruby wrapper for Cleverbot.
 
