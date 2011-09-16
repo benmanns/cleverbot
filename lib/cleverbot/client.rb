@@ -39,7 +39,7 @@ module Cleverbot
 
     parser Parser
 
-    # Holds the parameters for an instantiated Cleverbot::Base.
+    # Holds the parameters for an instantiated Client.
     attr_reader :params
 
     # Creates a digest from the form parameters.
@@ -65,7 +65,7 @@ module Cleverbot
       post(PATH, :body => body).parsed_response
     end
 
-    # Initializes a Cleverbot::Base with given parameters.
+    # Initializes a Client with given parameters.
     #
     # ==== Parameters
     #
