@@ -129,4 +129,53 @@ describe Cleverbot::Client do
       end
     end
   end
+
+  describe '#initialize' do
+    subject { Cleverbot::Client.new @params }
+
+    context 'with params { "a" => "b" }' do
+      before :each do
+        @params = { 'a' => 'b' }
+      end
+
+      it 'sets #params to { "a" => "b" }' do
+        subject.params.should == { 'a' => 'b' }
+      end
+    end
+  end
+
+  describe '#write' do
+    before :each do
+      @client = Cleverbot::Client.new
+    end
+
+    subject { @client.write @message }
+
+    context 'with an empty message' do
+      before :each do
+        @message = ''
+      end
+
+      it 'should call .write with "" and #params' do
+        Cleverbot::Client.should_receive(:write).with(@message, @client.params).and_return({})
+        subject
+      end
+
+      context 'when .write returns { "message" => "Hi.", "sessionid" => "abcd" }' do
+        before :each do
+          Cleverbot::Client.stub!(:write).and_return 'message' => 'Hi.', 'sessionid' => 'abcd'
+        end
+
+        it 'should set #params[sessionid] to abcd' do
+          subject
+          @client.params['sessionid'].should == 'abcd'
+        end
+
+        it 'should not set #params[message] to Hi.' do
+          subject
+          @client.params['message'].should_not == 'abcd'
+        end
+      end
+    end
+  end
 end

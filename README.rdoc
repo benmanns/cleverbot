@@ -18,6 +18,12 @@ Ruby wrapper for Cleverbot.
   @params['message'] # => "Good."
   @params['sessionid'] # => "ABC01234567"
 
+=== Talk to Cleverbot with Cleverbot::Client#write to manage parameters.
+
+  @client = Cleverbot::Client.new
+  @client.write 'Hi.' # => "How are you?"
+  @client.write 'Good, you?' # => "Good."
+
 == Contributing to cleverbot
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

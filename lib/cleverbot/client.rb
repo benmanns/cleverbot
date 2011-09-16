@@ -39,6 +39,9 @@ module Cleverbot
 
     parser Parser
 
+    # Holds the parameters for an instantiated Cleverbot::Base.
+    attr_reader :params
+
     # Creates a digest from the form parameters.
     #
     # ==== Parameters
@@ -60,6 +63,29 @@ module Cleverbot
       body['icognocheck'] = digest HashConversions.to_params(body)
 
       post(PATH, :body => body).parsed_response
+    end
+
+    # Initializes a Cleverbot::Base with given parameters.
+    #
+    # ==== Parameters
+    #
+    # [<tt>params</tt>] Optional <tt>Hash</tt> holding the initial parameters. Defaults to <tt>{}</tt>.
+    def initialize params={}
+      @params = params
+    end
+
+    # Sends a message and returns a <tt>String</tt> with the message received. Updates #params to maintain state.
+    #
+    # ==== Parameters
+    #
+    # [<tt>message</tt>] Optional <tt>String</tt> holding the message to be sent. Defaults to <tt>''</tt>.
+    def write message=''
+      response = self.class.write message, @params
+      message = response['message']
+      response.keep_if { |key, value| DEFAULT_PARAMS.keys.include? key }
+      @params.merge! response
+      @params.delete_if { |key, value| DEFAULT_PARAMS[key] == value }
+      message
     end
   end
 end
