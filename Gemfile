@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'httparty', '~> 0.8.0'
+
 group :development do
   gem 'bundler', '~> 1.0'
   gem 'jeweler', '~> 1.6'
