@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cleverbot}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benjamin Manns"]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     ".rvmrc",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
