@@ -1,7 +1,7 @@
 require 'httparty'
 
 module Cleverbot
-  # Used in Cleverbot::Client to parse responses from Cleverbot.com.
+  # Used in Client to parse responses from Cleverbot.com.
   class Parser < HTTParty::Parser
     # Keys that correspond to the <tt>Array</tt> that Cleverbot.com returns.
     # They are combined with the <tt>Array</tt> to form a response <tt>Hash</tt>.
