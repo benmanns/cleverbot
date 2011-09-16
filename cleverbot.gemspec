@@ -28,7 +28,9 @@ Gem::Specification.new do |s|
     "VERSION",
     "cleverbot.gemspec",
     "lib/cleverbot.rb",
+    "lib/cleverbot/client.rb",
     "lib/cleverbot/parser.rb",
+    "spec/cleverbot/client_spec.rb",
     "spec/cleverbot/parser_spec.rb",
     "spec/cleverbot_spec.rb",
     "spec/spec_helper.rb"

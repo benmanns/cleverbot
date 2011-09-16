@@ -2,6 +2,22 @@
 
 Ruby wrapper for Cleverbot.
 
+== Examples
+
+=== Talk to Cleverbot with Cleverbot::Client.write
+
+  @params = Cleverbot::Client.write 'Hi.'
+  @params['message'] # => "How are you?"
+  @params['sessionid'] # => "ABC01234567"
+
+  @params.keep_if { |key, value| Cleverbot::Client::DEFAULT_PARAMS.keys.include? key }
+  @params['message'] # => nil
+  @params['sessionid'] # => "ABC01234567"
+
+  @params = Cleverbot::Client.write 'Good, you?', @params
+  @params['message'] # => "Good."
+  @params['sessionid'] # => "ABC01234567"
+
 == Contributing to cleverbot
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
