@@ -5,7 +5,7 @@ describe Cleverbot::Parser do
 
   it { should <= HTTParty::Parser }
 
-  it { should be_supports_format :html }
+  it('should support format :html') { should be_supports_format :html }
 
   describe '::KEYS' do
     subject { Cleverbot::Parser::KEYS }
