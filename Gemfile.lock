@@ -28,7 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0)
+  bundler
   httparty (~> 0.10.2)
   jeweler (~> 1.6)
   rcov (~> 0.9)
