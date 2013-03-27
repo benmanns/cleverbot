@@ -6,6 +6,6 @@ group :development do
   gem 'bundler'
   gem 'jeweler', '~> 1.8.4'
   gem 'simplecov', '~> 0.7.1'
-  gem 'rdoc', '~> 3.9'
+  gem 'rdoc', '~> 4.0.0'
   gem 'rspec', '~> 2.3'
 end
