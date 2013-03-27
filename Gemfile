@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'httparty', '~> 0.8.0'
+gem 'httparty', '~> 0.10.2'
 
 group :development do
   gem 'bundler', '~> 1.0'
