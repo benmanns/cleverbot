@@ -28,11 +28,6 @@ RSpec::Core::RakeTask.new :spec do |spec|
   spec.pattern = FileList[File.join('spec', '**', '*_spec.rb')]
 end
 
-RSpec::Core::RakeTask.new :rcov do |spec|
-  spec.pattern = File.join('spec', '**', '*_spec.rb')
-  spec.rcov = true
-end
-
 task :default => :spec
 
 require 'rdoc/task'

@@ -49,14 +49,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<httparty>, ["~> 0.10.2"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<rcov>, ["~> 0.9"])
+      s.add_development_dependency(%q<simplecov>, ["~> 0.7.1"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.9"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3"])
     else
       s.add_dependency(%q<httparty>, ["~> 0.10.2"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<rcov>, ["~> 0.9"])
+      s.add_dependency(%q<simplecov>, ["~> 0.7.1"])
       s.add_dependency(%q<rdoc>, ["~> 3.9"])
       s.add_dependency(%q<rspec>, ["~> 2.3"])
     end
@@ -64,7 +64,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<httparty>, ["~> 0.10.2"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<rcov>, ["~> 0.9"])
+    s.add_dependency(%q<simplecov>, ["~> 0.7.1"])
     s.add_dependency(%q<rdoc>, ["~> 3.9"])
     s.add_dependency(%q<rspec>, ["~> 2.3"])
   end
