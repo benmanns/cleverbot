@@ -48,7 +48,7 @@ module Cleverbot
     #
     # [<tt>body</tt>] <tt>String</tt> to be digested.
     def self.digest body
-      Digest::MD5.hexdigest body[9...29]
+      Digest::MD5.hexdigest body[9...35]
     end
 
     # Sends a message to Cleverbot.com and returns a <tt>Hash</tt> containing the parameters received.
