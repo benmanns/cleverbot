@@ -69,7 +69,7 @@ describe Cleverbot::Client do
 
       context 'when Digest::MD5.hexdigest returns abcd' do
         before :each do
-          Digest::MD5.stub!(:hexdigest).and_return 'abcd'
+          Digest::MD5.stub(:hexdigest).and_return 'abcd'
         end
 
         it { should == 'abcd' }
@@ -91,37 +91,37 @@ describe Cleverbot::Client do
         end
 
         it 'should post to PATH' do
-          Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, hash_including).and_return mock(:parsed_response => {})
+          Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, hash_including).and_return double(:parsed_response => {})
           subject
         end
 
         Cleverbot::Client::DEFAULT_PARAMS.each do |key, value|
           next if ['stimulus', 'icognocheck'].include? key
           it "should add #{key} => #{value.inspect} to the post body" do
-            Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including(key => value)).and_return mock(:parsed_response => {})
+            Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including(key => value)).and_return double(:parsed_response => {})
             subject
           end
         end
 
         it 'should add stimulus => "" to the post body' do
-          Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including('stimulus' => '')).and_return mock(:parsed_response => {})
+          Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including('stimulus' => '')).and_return double(:parsed_response => {})
           subject
         end
 
         context 'when digest returns abcd' do
           before :each do
-            Digest::MD5.stub!(:hexdigest).and_return 'abcd'
+            Digest::MD5.stub(:hexdigest).and_return 'abcd'
           end
 
           it 'should add icognocheck => "abcd" to the post body' do
-            Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including('icognocheck' => 'abcd')).and_return mock(:parsed_response => {})
+            Cleverbot::Client.should_receive(:post).with(Cleverbot::Client::PATH, :body => hash_including('icognocheck' => 'abcd')).and_return double(:parsed_response => {})
             subject
           end
         end
 
         context 'when the parsed response is {}' do
           before :each do
-            Cleverbot::Client.stub!(:post).and_return mock(:parsed_response => {})
+            Cleverbot::Client.stub(:post).and_return double(:parsed_response => {})
           end
 
           it { should == {} }
@@ -163,7 +163,7 @@ describe Cleverbot::Client do
 
       context 'when .write returns { "message" => "Hi.", "sessionid" => "abcd" }' do
         before :each do
-          Cleverbot::Client.stub!(:write).and_return 'message' => 'Hi.', 'sessionid' => 'abcd'
+          Cleverbot::Client.stub(:write).and_return 'message' => 'Hi.', 'sessionid' => 'abcd'
         end
 
         it 'should set #params[sessionid] to abcd' do
