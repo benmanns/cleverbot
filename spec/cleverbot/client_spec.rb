@@ -59,11 +59,11 @@ describe Cleverbot::Client do
     subject { Cleverbot::Client.digest @body }
     context 'given a body of 0123456789abcdefghijklmnopqrstuvwxyz' do
       before :each do
-        @body = '0123456789abcdefghijklmnopqrstuvwxyz'
+        @body = '0123456789abcdefghijklmnopqrstuvwxyz-truncateme'
       end
 
-      it 'should call Digest::MD5.hexdigest with 9abcdefghijklmnopqrs' do
-        Digest::MD5.should_receive(:hexdigest).with @body[9..28]
+      it 'should call Digest::MD5.hexdigest with 9abcdefghijklmnopqrstuvwxyz' do
+        Digest::MD5.should_receive(:hexdigest).with @body[9..34]
         subject
       end
 
