@@ -16,7 +16,7 @@ GEM
       oauth2
     hashie (2.0.5)
     highline (1.6.19)
-    httparty (0.10.2)
+    httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     httpauth (0.2.0)
@@ -65,7 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  httparty (~> 0.10.2)
+  httparty (>= 0.8.1, < 1.0)
   jeweler (~> 1.8.7)
   rdoc (~> 4.0.1)
   rspec (~> 2.14.1)
