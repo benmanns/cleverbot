@@ -38,6 +38,7 @@ module Cleverbot
     base_uri 'http://www.cleverbot.com'
 
     parser Parser
+    headers 'Accept-Encoding' => 'gzip'
 
     # Holds the parameters for an instantiated Client.
     attr_reader :params
