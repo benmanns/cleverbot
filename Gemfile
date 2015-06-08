@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'httparty', '>= 0.8.1', '< 1.0'
+gem 'httparty', '>= 0.12.0', '< 1.0'
 
 group :development do
   gem 'jeweler', '~> 1.8.8'
